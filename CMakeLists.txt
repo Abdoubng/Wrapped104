@@ -12,12 +12,12 @@ set(LIB_VERSION_PATCH "1")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
 include_directories(
-	${CMAKE_CURRENT_LIST_DIR}/src
-	${CMAKE_CURRENT_LIST_DIR}/lib104/
+${CMAKE_CURRENT_LIST_DIR}/src
+${CMAKE_CURRENT_LIST_DIR}/lib104/
 )
 
 link_directories(
-	${CMAKE_CURRENT_LIST_DIR}/lib104/
+${CMAKE_CURRENT_LIST_DIR}/lib104/
 )
 
 

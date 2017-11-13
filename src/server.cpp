@@ -1,9 +1,10 @@
 #include "server.hpp"
+#include "handlers.hpp"
 #include <iostream>
 #include "../lib104/iec60870_slave.h"
 #include "../lib104/hal_time.h"
 
-/************************ C FUNCTION DECLARATION **************************/
+/************************ C FUNCTION DECLARATION **************************
 static ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, CP56Time2a newTime);
 
 static ConnectionRequestHandler connectionHandler(void* parameter, const char* ipAddress);
@@ -13,7 +14,7 @@ static InterrogationHandler interrogationHandler(void* parameter, MasterConnecti
 static ASDUHandler asduHandler(void* parameter, MasterConnection connection, ASDU asdu);
 
 ConnectionParameters connectionParameters;
-/************************ SERVER FUNCTION DEFINITION *********************/
+************************ SERVER FUNCTION DEFINITION *********************/
 
 /* constructor */
 serverz::serverz(){}
@@ -45,22 +46,22 @@ void serverz::initial(int Arg1, int Arg2){
 }
 
 void serverz::setHandlers(){
-	Slave_setClockSyncHandler(slave, (ClockSynchronizationHandler) clockSynchandler, nullptr);
+	Slave_setClockSyncHandler(slave, (ClockSynchronizationHandler) handlers.clockSynchandler, nullptr);
 	std::cout<< "interro handler set "<< std::endl;
 	connectionParameters= Slave_getConnectionParameters(slave);
 	
-	Slave_setInterrogationHandler(slave, (InterrogationHandler) interrogationHandler, nullptr);
-	Slave_setASDUHandler(slave, (ASDUHandler) asduHandler, nullptr);
+	Slave_setInterrogationHandler(slave, (InterrogationHandler) handlers.interrogationHandler, nullptr);
+	Slave_setASDUHandler(slave, (ASDUHandler) handlers.asduHandler, nullptr);
 
 
 
 }
 void serverz::setConnection(){
-	T104Slave_setConnectionRequestHandler(slave, (ConnectionRequestHandler) connectionHandler, nullptr);
+	T104Slave_setConnectionRequestHandler(slave, (ConnectionRequestHandler) handlers.connectionHandler, nullptr);
 	std::cout << "connection handler set" << std::endl;
 }
 
-ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, 
+/*ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, 
 		CP56Time2a newTime ){
 		std::cout << CP56Time2a_getHour(newTime)
 		<< ":" << CP56Time2a_getMinute(newTime)
@@ -68,7 +69,7 @@ ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection c
 		<< " " << CP56Time2a_getDayOfMonth(newTime)
 		<< ":" << CP56Time2a_getMonth(newTime) 
 		<< ":" << CP56Time2a_getYear(newTime) + 2000
-		<< std::endl;;
+		<< std::endl;
 }
 
 
@@ -180,5 +181,5 @@ InterrogationHandler interrogationHandler(void* parameter, MasterConnection conn
 
 }
 
-
+*/
 serverz::~serverz(){}
