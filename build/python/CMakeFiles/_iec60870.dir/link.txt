@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -std=c++11 -fPIC   -shared -Wl,-soname,_iec60870.so -o _iec60870.so CMakeFiles/_iec60870.dir/iec60870PYTHON_wrap.cxx.o  -L/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104 -lpython2.7 ../src/libiec60870.a -liec60870 -lm -lpthread -Wl,-rpath,/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104: 

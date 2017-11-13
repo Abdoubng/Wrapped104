@@ -1,0 +1,4 @@
+/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/python/CMakeFiles/_iec60870.dir
+/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/example/CMakeFiles/example.dir
+/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/src/CMakeFiles/iec60870.dir
+/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/src/CMakeFiles/iec60870-shared.dir
