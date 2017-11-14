@@ -1,9 +1,13 @@
 #include "server.hpp"
+<<<<<<< HEAD
+=======
+//#include "handlers.hpp"
+>>>>>>> d727887820f10dd95a30abbb7f29ec4be664f21a
 #include <iostream>
 #include "../lib104/iec60870_slave.h"
 #include "../lib104/hal_time.h"
 
-/************************ C FUNCTION DECLARATION **************************
+/************************ C FUNCTION DECLARATION **************************/
 static ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, CP56Time2a newTime);
 
 static ConnectionRequestHandler connectionHandler(void* parameter, const char* ipAddress);
@@ -13,7 +17,7 @@ static InterrogationHandler interrogationHandler(void* parameter, MasterConnecti
 static ASDUHandler asduHandler(void* parameter, MasterConnection connection, ASDU asdu);
 
 ConnectionParameters connectionParameters;
-************************ SERVER FUNCTION DEFINITION *********************/
+/************************ SERVER FUNCTION DEFINITION **********************/
 
 /* constructor */
 serverz::serverz(){}
@@ -60,7 +64,7 @@ void serverz::setConnection(ConnectionRequestHandler connectionHandler){
 	std::cout << "connection handler set" << std::endl;
 }
 
-/*ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, 
+ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, 
 		CP56Time2a newTime ){
 		std::cout << CP56Time2a_getHour(newTime)
 		<< ":" << CP56Time2a_getMinute(newTime)
@@ -180,5 +184,5 @@ InterrogationHandler interrogationHandler(void* parameter, MasterConnection conn
 
 }
 
-*/
+
 serverz::~serverz(){}

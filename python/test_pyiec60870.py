@@ -11,7 +11,8 @@ def signal_handler(signal, frame):
 	global running
 	running =0
 	print('You pressed Ctrl+C!')
-	#sys.exit(0)
+        sys.exit(0)
+
 signal.signal(signal.SIGINT, signal_handler)
 
 running = 1
@@ -52,7 +53,7 @@ class Slave(iec60870.server):
 #
 #		
 #	def stop(self):
-		#print 2	
+#		print 2	
 #        cal=pCallback()
 Sslave=Slave()
 
