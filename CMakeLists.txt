@@ -27,4 +27,5 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/python)
 
 set(API_HEADERS
        src/server.hpp
+       src/handlers.hpp
 )       

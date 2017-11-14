@@ -1,6 +1,7 @@
 
 set (lib_client_SRCS
 ./server.cpp
+./handlers.cpp
 )
 
 

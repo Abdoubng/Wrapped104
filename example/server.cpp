@@ -1,5 +1,4 @@
 #include "server.hpp"
-#include "handlers.hpp"
 #include <iostream>
 #include "../lib104/iec60870_slave.h"
 #include "../lib104/hal_time.h"
@@ -45,19 +44,19 @@ void serverz::initial(int Arg1, int Arg2){
 
 }
 
-void serverz::setHandlers(){
-	Slave_setClockSyncHandler(slave, (ClockSynchronizationHandler) handlers.clockSynchandler, nullptr);
+void serverz::setHandlers(ClockSynchronizationHandler clockSynchandler, InterrogationHandler interrogationHandler, ASDUHandler asduHandler){
+	Slave_setClockSyncHandler(slave, (ClockSynchronizationHandler) clockSynchandler, nullptr);
 	std::cout<< "interro handler set "<< std::endl;
 	connectionParameters= Slave_getConnectionParameters(slave);
 	
-	Slave_setInterrogationHandler(slave, (InterrogationHandler) handlers.interrogationHandler, nullptr);
-	Slave_setASDUHandler(slave, (ASDUHandler) handlers.asduHandler, nullptr);
+	Slave_setInterrogationHandler(slave, (InterrogationHandler) interrogationHandler, nullptr);
+	Slave_setASDUHandler(slave, (ASDUHandler) asduHandler, nullptr);
 
 
 
 }
-void serverz::setConnection(){
-	T104Slave_setConnectionRequestHandler(slave, (ConnectionRequestHandler) handlers.connectionHandler, nullptr);
+void serverz::setConnection(ConnectionRequestHandler connectionHandler){
+	T104Slave_setConnectionRequestHandler(slave, (ConnectionRequestHandler) connectionHandler, nullptr);
 	std::cout << "connection handler set" << std::endl;
 }
 

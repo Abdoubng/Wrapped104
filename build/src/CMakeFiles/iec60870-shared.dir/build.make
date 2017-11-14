@@ -81,17 +81,43 @@ src/CMakeFiles/iec60870-shared.dir/server.cpp.o.provides: src/CMakeFiles/iec6087
 src/CMakeFiles/iec60870-shared.dir/server.cpp.o.provides.build: src/CMakeFiles/iec60870-shared.dir/server.cpp.o
 
 
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o: src/CMakeFiles/iec60870-shared.dir/flags.make
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o: ../src/handlers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/baban/protocols/Wrapped104/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o"
+	cd /home/baban/protocols/Wrapped104/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/iec60870-shared.dir/handlers.cpp.o -c /home/baban/protocols/Wrapped104/src/handlers.cpp
+
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/iec60870-shared.dir/handlers.cpp.i"
+	cd /home/baban/protocols/Wrapped104/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/baban/protocols/Wrapped104/src/handlers.cpp > CMakeFiles/iec60870-shared.dir/handlers.cpp.i
+
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/iec60870-shared.dir/handlers.cpp.s"
+	cd /home/baban/protocols/Wrapped104/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/baban/protocols/Wrapped104/src/handlers.cpp -o CMakeFiles/iec60870-shared.dir/handlers.cpp.s
+
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.requires
+
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.provides: src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/iec60870-shared.dir/build.make src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.provides.build
+.PHONY : src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.provides
+
+src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.provides.build: src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o
+
+
 # Object files for target iec60870-shared
 iec60870__shared_OBJECTS = \
-"CMakeFiles/iec60870-shared.dir/server.cpp.o"
+"CMakeFiles/iec60870-shared.dir/server.cpp.o" \
+"CMakeFiles/iec60870-shared.dir/handlers.cpp.o"
 
 # External object files for target iec60870-shared
 iec60870__shared_EXTERNAL_OBJECTS =
 
 src/libiec60870.so.0.0.1: src/CMakeFiles/iec60870-shared.dir/server.cpp.o
+src/libiec60870.so.0.0.1: src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o
 src/libiec60870.so.0.0.1: src/CMakeFiles/iec60870-shared.dir/build.make
 src/libiec60870.so.0.0.1: src/CMakeFiles/iec60870-shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/baban/protocols/Wrapped104/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libiec60870.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/baban/protocols/Wrapped104/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libiec60870.so"
 	cd /home/baban/protocols/Wrapped104/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/iec60870-shared.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/baban/protocols/Wrapped104/build/src && $(CMAKE_COMMAND) -E cmake_symlink_library libiec60870.so.0.0.1 libiec60870.so.0.0.1 libiec60870.so
 
@@ -104,6 +130,7 @@ src/CMakeFiles/iec60870-shared.dir/build: src/libiec60870.so
 .PHONY : src/CMakeFiles/iec60870-shared.dir/build
 
 src/CMakeFiles/iec60870-shared.dir/requires: src/CMakeFiles/iec60870-shared.dir/server.cpp.o.requires
+src/CMakeFiles/iec60870-shared.dir/requires: src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o.requires
 
 .PHONY : src/CMakeFiles/iec60870-shared.dir/requires
 

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <typeinfo>
 #include "../lib104/iec60870_slave.h"
+#include "handlers.hpp"
+
 class serverz {
 	public:
 			serverz();
@@ -11,9 +13,9 @@ class serverz {
 
 			void initial(int arg1, int arg2);
                         void Start();
-                        void setHandlers();
-//			ConnectionParameters connectionParameters;   
-			void setConnection();			
+                        void setHandlers(ClockSynchronizationHandler clockSynchandler, InterrogationHandler interrogationHandler, ASDUHandler asduHandler);
+			ConnectionParameters connectionParameters;   
+			void setConnection(ConnectionRequestHandler connectionHandler);
 			Slave slave;
 			ASDU newAsdu;
 			InformationObject io;

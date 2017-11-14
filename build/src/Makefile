@@ -184,6 +184,36 @@ iec60870/fast:
 	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870.dir/build.make src/CMakeFiles/iec60870.dir/build
 .PHONY : iec60870/fast
 
+handlers.o: handlers.cpp.o
+
+.PHONY : handlers.o
+
+# target to build an object file
+handlers.cpp.o:
+	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870-shared.dir/build.make src/CMakeFiles/iec60870-shared.dir/handlers.cpp.o
+	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870.dir/build.make src/CMakeFiles/iec60870.dir/handlers.cpp.o
+.PHONY : handlers.cpp.o
+
+handlers.i: handlers.cpp.i
+
+.PHONY : handlers.i
+
+# target to preprocess a source file
+handlers.cpp.i:
+	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870-shared.dir/build.make src/CMakeFiles/iec60870-shared.dir/handlers.cpp.i
+	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870.dir/build.make src/CMakeFiles/iec60870.dir/handlers.cpp.i
+.PHONY : handlers.cpp.i
+
+handlers.s: handlers.cpp.s
+
+.PHONY : handlers.s
+
+# target to generate assembly for a file
+handlers.cpp.s:
+	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870-shared.dir/build.make src/CMakeFiles/iec60870-shared.dir/handlers.cpp.s
+	cd /home/baban/protocols/Wrapped104/build && $(MAKE) -f src/CMakeFiles/iec60870.dir/build.make src/CMakeFiles/iec60870.dir/handlers.cpp.s
+.PHONY : handlers.cpp.s
+
 server.o: server.cpp.o
 
 .PHONY : server.o
@@ -228,6 +258,9 @@ help:
 	@echo "... iec60870"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... handlers.o"
+	@echo "... handlers.i"
+	@echo "... handlers.s"
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"

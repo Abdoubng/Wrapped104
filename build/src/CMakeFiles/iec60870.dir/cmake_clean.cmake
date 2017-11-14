@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/iec60870.dir/server.cpp.o"
+  "CMakeFiles/iec60870.dir/handlers.cpp.o"
   "libiec60870.pdb"
   "libiec60870.a"
 )

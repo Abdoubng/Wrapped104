@@ -81,17 +81,43 @@ src/CMakeFiles/iec60870.dir/server.cpp.o.provides: src/CMakeFiles/iec60870.dir/s
 src/CMakeFiles/iec60870.dir/server.cpp.o.provides.build: src/CMakeFiles/iec60870.dir/server.cpp.o
 
 
+src/CMakeFiles/iec60870.dir/handlers.cpp.o: src/CMakeFiles/iec60870.dir/flags.make
+src/CMakeFiles/iec60870.dir/handlers.cpp.o: ../src/handlers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/baban/protocols/Wrapped104/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/iec60870.dir/handlers.cpp.o"
+	cd /home/baban/protocols/Wrapped104/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/iec60870.dir/handlers.cpp.o -c /home/baban/protocols/Wrapped104/src/handlers.cpp
+
+src/CMakeFiles/iec60870.dir/handlers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/iec60870.dir/handlers.cpp.i"
+	cd /home/baban/protocols/Wrapped104/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/baban/protocols/Wrapped104/src/handlers.cpp > CMakeFiles/iec60870.dir/handlers.cpp.i
+
+src/CMakeFiles/iec60870.dir/handlers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/iec60870.dir/handlers.cpp.s"
+	cd /home/baban/protocols/Wrapped104/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/baban/protocols/Wrapped104/src/handlers.cpp -o CMakeFiles/iec60870.dir/handlers.cpp.s
+
+src/CMakeFiles/iec60870.dir/handlers.cpp.o.requires:
+
+.PHONY : src/CMakeFiles/iec60870.dir/handlers.cpp.o.requires
+
+src/CMakeFiles/iec60870.dir/handlers.cpp.o.provides: src/CMakeFiles/iec60870.dir/handlers.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/iec60870.dir/build.make src/CMakeFiles/iec60870.dir/handlers.cpp.o.provides.build
+.PHONY : src/CMakeFiles/iec60870.dir/handlers.cpp.o.provides
+
+src/CMakeFiles/iec60870.dir/handlers.cpp.o.provides.build: src/CMakeFiles/iec60870.dir/handlers.cpp.o
+
+
 # Object files for target iec60870
 iec60870_OBJECTS = \
-"CMakeFiles/iec60870.dir/server.cpp.o"
+"CMakeFiles/iec60870.dir/server.cpp.o" \
+"CMakeFiles/iec60870.dir/handlers.cpp.o"
 
 # External object files for target iec60870
 iec60870_EXTERNAL_OBJECTS =
 
 src/libiec60870.a: src/CMakeFiles/iec60870.dir/server.cpp.o
+src/libiec60870.a: src/CMakeFiles/iec60870.dir/handlers.cpp.o
 src/libiec60870.a: src/CMakeFiles/iec60870.dir/build.make
 src/libiec60870.a: src/CMakeFiles/iec60870.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/baban/protocols/Wrapped104/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libiec60870.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/baban/protocols/Wrapped104/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libiec60870.a"
 	cd /home/baban/protocols/Wrapped104/build/src && $(CMAKE_COMMAND) -P CMakeFiles/iec60870.dir/cmake_clean_target.cmake
 	cd /home/baban/protocols/Wrapped104/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/iec60870.dir/link.txt --verbose=$(VERBOSE)
 
@@ -101,6 +127,7 @@ src/CMakeFiles/iec60870.dir/build: src/libiec60870.a
 .PHONY : src/CMakeFiles/iec60870.dir/build
 
 src/CMakeFiles/iec60870.dir/requires: src/CMakeFiles/iec60870.dir/server.cpp.o.requires
+src/CMakeFiles/iec60870.dir/requires: src/CMakeFiles/iec60870.dir/handlers.cpp.o.requires
 
 .PHONY : src/CMakeFiles/iec60870.dir/requires
 
