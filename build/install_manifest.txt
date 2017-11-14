@@ -1,5 +1,0 @@
-/usr/local/lib/libiec60870.a
-/usr/local/lib/libiec60870.so.0.0.1
-/usr/local/lib/libiec60870.so
-/usr/lib/python2.7/dist-packages/iec60870.py
-/usr/lib/python2.7/dist-packages/_iec60870.so

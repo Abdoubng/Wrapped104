@@ -1,1 +1,1 @@
-/usr/bin/c++  -fPIC  -std=c++11 -fPIC   -shared -Wl,-soname,libiec60870.so.0.0.1 -o libiec60870.so.0.0.1 CMakeFiles/iec60870-shared.dir/server.cpp.o  -L/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104 -liec61850 -Wl,-rpath,/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104: 
+/usr/bin/c++  -fPIC  -std=c++11 -fPIC  -shared -Wl,-soname,libiec60870.so.0.0.1 -o libiec60870.so.0.0.1 CMakeFiles/iec60870-shared.dir/server.cpp.o  -L/home/baban/protocols/Wrapped104/lib104 -Wl,-rpath,/home/baban/protocols/Wrapped104/lib104: -liec60870 

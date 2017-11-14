@@ -1,2 +1,2 @@
-/usr/bin/ar cr libiec60870.a  CMakeFiles/iec60870.dir/server.cpp.o
+/usr/bin/ar qc libiec60870.a  CMakeFiles/iec60870.dir/server.cpp.o
 /usr/bin/ranlib libiec60870.a

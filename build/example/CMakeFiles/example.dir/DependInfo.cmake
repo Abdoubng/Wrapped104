@@ -4,20 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/example/example_server.cpp" "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/example/CMakeFiles/example.dir/example_server.cpp.o"
+  "/home/baban/protocols/Wrapped104/example/example_server.cpp" "/home/baban/protocols/Wrapped104/build/example/CMakeFiles/example.dir/example_server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/src/CMakeFiles/iec60870.dir/DependInfo.cmake"
-  )
-
 # The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src"
   "../lib104"
   )
-set(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-set(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-set(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/baban/protocols/Wrapped104/build/src/CMakeFiles/iec60870.dir/DependInfo.cmake"
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

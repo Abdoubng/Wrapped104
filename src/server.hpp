@@ -4,8 +4,6 @@
 #include <iostream>
 #include <typeinfo>
 #include "../lib104/iec60870_slave.h"
-//}
-
 class serverz {
 	public:
 			serverz();

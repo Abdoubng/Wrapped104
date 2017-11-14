@@ -1,4 +1,4 @@
-# Install script for directory: /media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/python
+# Install script for directory: /home/baban/protocols/Wrapped104/python
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,7 +32,7 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
    "/usr/lib/python2.7/dist-packages/iec60870.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
@@ -41,10 +41,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib/python2.7/dist-packages" TYPE FILE FILES "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/python/iec60870.py")
+file(INSTALL DESTINATION "/usr/lib/python2.7/dist-packages" TYPE FILE FILES "/home/baban/protocols/Wrapped104/build/python/iec60870.py")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so")
     file(RPATH_CHECK
@@ -59,11 +59,13 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib/python2.7/dist-packages" TYPE MODULE FILES "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/python/_iec60870.so")
+file(INSTALL DESTINATION "/usr/lib/python2.7/dist-packages" TYPE MODULE FILES "/home/baban/protocols/Wrapped104/build/python/_iec60870.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so")
-    file(RPATH_REMOVE
-         FILE "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so"
+         OLD_RPATH "/home/baban/protocols/Wrapped104/lib104:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/lib/python2.7/dist-packages/_iec60870.so")
     endif()

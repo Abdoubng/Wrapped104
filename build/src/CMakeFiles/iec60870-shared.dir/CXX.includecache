@@ -6,53 +6,61 @@
 
 #IncludeRegexTransform: 
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/hal_socket.h
+/home/baban/protocols/Wrapped104/lib104/hal_socket.h
 stdint.h
 -
 stdbool.h
 -
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/hal_time.h
+/home/baban/protocols/Wrapped104/lib104/hal_time.h
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/iec60870_common.h
+/home/baban/protocols/Wrapped104/lib104/iec60870_common.h
 stdint.h
 -
 stdbool.h
 -
 information_objects.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/information_objects.h
+/home/baban/protocols/Wrapped104/lib104/information_objects.h
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/iec60870_slave.h
+/home/baban/protocols/Wrapped104/lib104/iec60870_slave.h
 stdint.h
 -
 stdbool.h
 -
 iec60870_common.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/iec60870_common.h
+/home/baban/protocols/Wrapped104/lib104/iec60870_common.h
 tls_api.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/tls_api.h
+/home/baban/protocols/Wrapped104/lib104/tls_api.h
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/information_objects.h
+/home/baban/protocols/Wrapped104/lib104/information_objects.h
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/tls_api.h
+/home/baban/protocols/Wrapped104/lib104/tls_api.h
 hal_socket.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/hal_socket.h
+/home/baban/protocols/Wrapped104/lib104/hal_socket.h
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/src/server.cpp
+/home/baban/protocols/Wrapped104/src/handlers.hpp
+../lib104/iec60870_slave.h
+/home/baban/protocols/Wrapped104/lib104/iec60870_slave.h
+iostream
+-
+
+/home/baban/protocols/Wrapped104/src/server.cpp
 server.hpp
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/src/server.hpp
+/home/baban/protocols/Wrapped104/src/server.hpp
+handlers.hpp
+/home/baban/protocols/Wrapped104/src/handlers.hpp
 iostream
 -
 ../lib104/iec60870_slave.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/iec60870_slave.h
+/home/baban/protocols/Wrapped104/lib104/iec60870_slave.h
 ../lib104/hal_time.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/hal_time.h
+/home/baban/protocols/Wrapped104/lib104/hal_time.h
 
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/src/server.hpp
+/home/baban/protocols/Wrapped104/src/server.hpp
 iostream
 -
 typeinfo
 -
 ../lib104/iec60870_slave.h
-/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/lib104/iec60870_slave.h
+/home/baban/protocols/Wrapped104/lib104/iec60870_slave.h
 

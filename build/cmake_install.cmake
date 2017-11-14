@@ -1,4 +1,4 @@
-# Install script for directory: /media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp
+# Install script for directory: /home/baban/protocols/Wrapped104
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/src/cmake_install.cmake")
-  include("/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/example/cmake_install.cmake")
-  include("/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/python/cmake_install.cmake")
+  include("/home/baban/protocols/Wrapped104/build/src/cmake_install.cmake")
+  include("/home/baban/protocols/Wrapped104/build/example/cmake_install.cmake")
+  include("/home/baban/protocols/Wrapped104/build/python/cmake_install.cmake")
 
 endif()
 
@@ -46,7 +46,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/${CMAKE_INSTALL_MANIFEST}" "")
-foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpp/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
-endforeach()
+string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
+       "${CMAKE_INSTALL_MANIFEST_FILES}")
+file(WRITE "/home/baban/protocols/Wrapped104/build/${CMAKE_INSTALL_MANIFEST}"
+     "${CMAKE_INSTALL_MANIFEST_CONTENT}")
