@@ -9,17 +9,13 @@
 class serverz {
 	public:
 			serverz();
+			~serverz();
 			int arg1, arg2;
 
-			void initial(int arg1, int arg2);
+			void initial(const char* file_name);
                         void Start();
-                        void setHandlers(ClockSynchronizationHandler clockSynchandler, InterrogationHandler interrogationHandler, ASDUHandler asduHandler);
-			ConnectionParameters connectionParameters;   
-			void setConnection(ConnectionRequestHandler connectionHandler);
+                        void setHandlers(ClockSynchronizationHandler clockSynchandler, InterrogationHandler interrogationHandler, ASDUHandler asduHandler, ConnectionRequestHandler connectionHandler);
 			Slave slave;
-			ASDU newAsdu;
-			InformationObject io;
-			~serverz();
 
 	private:
 		

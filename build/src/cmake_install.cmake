@@ -1,4 +1,4 @@
-# Install script for directory: /home/baban/protocols/Wrapped104/src
+# Install script for directory: /media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,11 +32,11 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Libraries" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/baban/protocols/Wrapped104/build/src/libiec60870.a")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Libraries")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/build/src/libiec60870.a")
 endif()
 
-if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Libraries" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Libraries")
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libiec60870.so.0.0.1"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libiec60870.so"
@@ -49,8 +49,8 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Libraries" OR NOT CMAKE_INSTALL_COMPON
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/baban/protocols/Wrapped104/build/src/libiec60870.so.0.0.1"
-    "/home/baban/protocols/Wrapped104/build/src/libiec60870.so"
+    "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/build/src/libiec60870.so.0.0.1"
+    "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/build/src/libiec60870.so"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libiec60870.so.0.0.1"
@@ -58,10 +58,8 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Libraries" OR NOT CMAKE_INSTALL_COMPON
       )
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
-      file(RPATH_CHANGE
-           FILE "${file}"
-           OLD_RPATH "/home/baban/protocols/Wrapped104/lib104:"
-           NEW_RPATH "")
+      file(RPATH_REMOVE
+           FILE "${file}")
       if(CMAKE_INSTALL_DO_STRIP)
         execute_process(COMMAND "/usr/bin/strip" "${file}")
       endif()

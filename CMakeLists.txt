@@ -24,8 +24,9 @@ ${CMAKE_CURRENT_LIST_DIR}/lib104/
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/src)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/example)
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/python)
-
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/json_spirit)
 set(API_HEADERS
        src/server.hpp
-       src/handlers.hpp
-)       
+	src/handlers.hpp       
+	json_spirit/json_spirit.h
+	)       

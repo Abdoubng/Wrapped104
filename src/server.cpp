@@ -1,13 +1,12 @@
-#include "server.hpp"
-<<<<<<< HEAD
-=======
-//#include "handlers.hpp"
->>>>>>> d727887820f10dd95a30abbb7f29ec4be664f21a
 #include <iostream>
+
+#include "server.hpp"
 #include "../lib104/iec60870_slave.h"
 #include "../lib104/hal_time.h"
+using namespace json_spirit;
+using namespace std;
 
-/************************ C FUNCTION DECLARATION **************************/
+/************************ C FUNCTION DECLARATION **************************
 static ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, CP56Time2a newTime);
 
 static ConnectionRequestHandler connectionHandler(void* parameter, const char* ipAddress);
@@ -17,11 +16,12 @@ static InterrogationHandler interrogationHandler(void* parameter, MasterConnecti
 static ASDUHandler asduHandler(void* parameter, MasterConnection connection, ASDU asdu);
 
 ConnectionParameters connectionParameters;
-/************************ SERVER FUNCTION DEFINITION **********************/
+************************ SERVER FUNCTION DEFINITION **********************/
 
 /* constructor */
 serverz::serverz(){}
 
+serverz::~serverz(){}
 /* start the server*/
 
 void serverz::Start(){
@@ -40,28 +40,72 @@ void serverz::Start(){
 	};
 }
 
-void serverz::initial(int Arg1, int Arg2){
-     
-        slave= T104Slave_create(nullptr, Arg1, Arg2);
-   	T104Slave_setLocalAddress(slave, "0.0.0.0");
-	std::cout << "initialized" << std::endl;
+void serverz::initial(const char* file_name){
+       ifstream is(file_name);
+       	Value val;
+       //const string s = file_name;
+       std::cout << "here" << std::endl;
+       read(is, val); //read the json file to the value
+       Object obj = val.get_obj();
+       std::string ip, port, highlimit, lowlimit;
+       uint32_t size;
+
+    for(Object::size_type i = 0; i != obj.size(); ++i) {   
+        const Pair& pair = obj[i];
+        const string& name  = pair.name_;
+        const Value&  value = pair.value_;
+	std::cout << "1st for" << std::endl;
+	Object network, asduz;	
+	if( name == "network" ) {
+		std::cout << "in network if" << std::endl;
+		network = value.get_obj();
+		for(Object::size_type l = 0; l != network.size(); ++l) {   
+			std::cout << "2nd for" << std::endl;
+			const Pair& pair1 = network[l];
+		        const string& name1  = pair1.name_;
+		        const Value&  value1 = pair1.value_;
+		        if( name == "ip" ){
+				std::cout << "getting ip" << std::endl;
+			       	ip  = value.get_str();
+				std::cout << ip << std::endl;
+			}
+			else if( name == "port" ) port = value.get_int();
+			else if( name == "highlimit") highlimit = value.get_int();
+			else if( name == "lowlimit") lowlimit = value.get_int();
+	}}
+	else if ( name == "asduz") {
+		asduz = value.get_obj();
+		for(Object::size_type m = 0; m != asduz.size(); ++m) {
+			const Pair& pair2 = asduz[m];
+			const string& name2 = pair2.name_;
+			const Value& value2 = pair2.value_;
+			if(name == "type") {
+				int type = value.get_int();
+				std::cout<<type<<std::cout;
+				}
+		}
+		
+    }
 
 }
 
-void serverz::setHandlers(ClockSynchronizationHandler clockSynchandler, InterrogationHandler interrogationHandler, ASDUHandler asduHandler){
+}
+
+void serverz::setHandlers(ClockSynchronizationHandler clockSynchandler, InterrogationHandler interrogationHandler, ASDUHandler asduHandler, ConnectionRequestHandler connectionHandler){
+
 	Slave_setClockSyncHandler(slave, (ClockSynchronizationHandler) clockSynchandler, nullptr);
-	std::cout<< "interro handler set "<< std::endl;
-	connectionParameters= Slave_getConnectionParameters(slave);
+	std::cout<< "clock handler set "<< std::endl;
+//	connectionParameters= Slave_getConnectionParameters(slave);
 	
 	Slave_setInterrogationHandler(slave, (InterrogationHandler) interrogationHandler, nullptr);
+	std::cout<< "interro handler set "<< std::endl;
 	Slave_setASDUHandler(slave, (ASDUHandler) asduHandler, nullptr);
 
-
-
-}
-void serverz::setConnection(ConnectionRequestHandler connectionHandler){
 	T104Slave_setConnectionRequestHandler(slave, (ConnectionRequestHandler) connectionHandler, nullptr);
 	std::cout << "connection handler set" << std::endl;
+}
+
+/*void serverz::setConnection(ConnectionRequestHandler connectionHandler){
 }
 
 ClockSynchronizationHandler clockSynchandler(void* parameter, MasterConnection connection, ASDU asdu, 
@@ -87,28 +131,6 @@ ASDUHandler asduHandler(void* parameter, MasterConnection connection, ASDU asdu)
 }
 
 InterrogationHandler interrogationHandler(void* parameter, MasterConnection connection, ASDU asdu, uint8_t qoi) {
-	std::cout<< "interro for groupe " << std::endl;
-
-
-   ASDU newAsdu = ASDU_create(connectionParameters, M_SP_NA_1, true, INTERROGATED_BY_STATION,
-            0, 1, false, false);
-    InformationObject io = (InformationObject) SinglePointInformation_create(nullptr, 300, true, IEC60870_QUALITY_GOOD);
-    ASDU_addInformationObject(newAsdu, io);
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 301, false, IEC60870_QUALITY_GOOD));
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 302, true, IEC60870_QUALITY_GOOD));
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 303, false, IEC60870_QUALITY_GOOD));
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 304, true, IEC60870_QUALITY_GOOD));
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 305, false, IEC60870_QUALITY_GOOD));
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 306, true, IEC60870_QUALITY_GOOD));
-    ASDU_addInformationObject(newAsdu, (InformationObject) SinglePointInformation_create((SinglePointInformation) io, 307, false, IEC60870_QUALITY_GOOD));
-
-    InformationObject_destroy(io);
-
-    MasterConnection_sendASDU(connection, newAsdu);
-
-    MasterConnection_sendACT_TERM(connection, asdu);
-
-
 
     struct sCP56Time2a timestamp;
 
@@ -116,10 +138,10 @@ InterrogationHandler interrogationHandler(void* parameter, MasterConnection conn
 
     MasterConnection_sendACT_CON(connection, asdu, false);
 
-    newAsdu = ASDU_create(connectionParameters, M_ME_NB_1, false, INTERROGATED_BY_STATION,
+    ASDU newAsdu = ASDU_create(connectionParameters, M_ME_NB_1, false, INTERROGATED_BY_STATION,
             0, 1, false, false);
 
-    io = (InformationObject) MeasuredValueScaled_create(NULL, 100, -1, IEC60870_QUALITY_GOOD);
+    InformationObject io = (InformationObject) MeasuredValueScaled_create(NULL, 100, -1, IEC60870_QUALITY_GOOD);
 
     ASDU_addInformationObject(newAsdu, io);
 
@@ -183,6 +205,5 @@ InterrogationHandler interrogationHandler(void* parameter, MasterConnection conn
 
 
 }
+*/
 
-
-serverz::~serverz(){}

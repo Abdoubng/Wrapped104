@@ -1,0 +1,41 @@
+{
+"network":{
+	"ip":"192.168.127.2",
+	"port":2404,
+	"highlimit":102,
+	"lowlimit":101
+	},	
+	
+"asduz":[ 
+    {
+        "type" : 1,
+        "ioa" : 100,
+        "value" : 2,
+        "quality" : 0
+    },
+    {
+        "type" : 2,
+        "ioa" : 101,
+        "value" : 1,
+        "quality" : 0
+    },
+    {
+        "type" : 2,
+        "ioa" : 102,
+        "value" : 0,
+        "quality" : 0
+    },
+    {
+        "type" : 1,
+        "ioa" : 103,
+        "value" : 2,
+        "quality" : 0
+    },
+    {
+        "type" : 1,
+        "ioa" : 105,
+        "value" : 2,
+        "quality" : 0
+    }
+   ]
+}

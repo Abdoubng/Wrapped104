@@ -1,4 +1,4 @@
-# Install script for directory: /home/baban/protocols/Wrapped104/example
+# Install script for directory: /media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/example
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

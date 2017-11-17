@@ -3,17 +3,19 @@
 #include "server.hpp"
 #include "../lib104/iec60870_slave.h"
 using namespace std;
+using namespace json_spirit;
 int main(){
 	serverz myserver;
 	handlers myhandlers;
 	std::cout << "my server instanciated" << std::endl;
 
-	myserver.initial(100, 102);
+	myserver.initial("config.json");
+	
 
 	std::cout << "slave created" << std::endl;
 //	usleep(3000000);
-	myserver.setHandlers((ClockSynchronizationHandler) myhandlers.clockSynchandler, (InterrogationHandler) myhandlers.interrogationHandler, (ASDUHandler) myhandlers.asduHandler);
-	myserver.setConnection((ConnectionRequestHandler) myhandlers.connectionHandler);
+	myhandlers.getConnectionParameters(myserver.slave);
+	myserver.setHandlers((ClockSynchronizationHandler) myhandlers.clockSynchandler, (InterrogationHandler) myhandlers.interrogationHandler, (ASDUHandler) myhandlers.asduHandler, (ConnectionRequestHandler) myhandlers.connectionHandler);
 	myserver.Start();	
 	std::cout << myserver.slave << std::endl;	
 

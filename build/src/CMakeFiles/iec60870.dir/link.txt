@@ -1,2 +1,2 @@
-/usr/bin/ar qc libiec60870.a  CMakeFiles/iec60870.dir/server.cpp.o CMakeFiles/iec60870.dir/handlers.cpp.o
+/usr/bin/ar cr libiec60870.a  CMakeFiles/iec60870.dir/server.cpp.o CMakeFiles/iec60870.dir/handlers.cpp.o CMakeFiles/iec60870.dir/__/json_spirit/json_spirit_reader.cpp.o
 /usr/bin/ranlib libiec60870.a

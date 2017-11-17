@@ -1,1 +1,1 @@
-/usr/bin/c++    -std=c++11 -fPIC   CMakeFiles/example.dir/example_server.cpp.o  -o example  -L/home/baban/protocols/Wrapped104/lib104 -Wl,-rpath,/home/baban/protocols/Wrapped104/lib104 -rdynamic ../src/libiec60870.a -liec60870 -lm -lpthread 
+/usr/bin/c++    -std=c++11 -fPIC    CMakeFiles/example.dir/example_server.cpp.o  -o example  -L/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/lib104 -rdynamic ../src/libiec60870.a -liec60870 -lm -lpthread -Wl,-rpath,/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/lib104 

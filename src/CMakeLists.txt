@@ -2,6 +2,7 @@
 set (lib_client_SRCS
 ./server.cpp
 ./handlers.cpp
+../json_spirit/json_spirit_reader.cpp
 )
 
 

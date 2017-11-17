@@ -4,20 +4,21 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/baban/protocols/Wrapped104/src/handlers.cpp" "/home/baban/protocols/Wrapped104/build/src/CMakeFiles/iec60870.dir/handlers.cpp.o"
-  "/home/baban/protocols/Wrapped104/src/server.cpp" "/home/baban/protocols/Wrapped104/build/src/CMakeFiles/iec60870.dir/server.cpp.o"
+  "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/json_spirit/json_spirit_reader.cpp" "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/build/src/CMakeFiles/iec60870.dir/__/json_spirit/json_spirit_reader.cpp.o"
+  "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/src/handlers.cpp" "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/build/src/CMakeFiles/iec60870.dir/handlers.cpp.o"
+  "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/src/server.cpp" "/media/benghaa/data/protocols/iec60870/lib60870/wrapedcpphandlersdev/build/src/CMakeFiles/iec60870.dir/server.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../lib104"
-  )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
-# Fortran module output directory.
-set(CMAKE_Fortran_TARGET_MODULE_DIR "")
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../src"
+  "../lib104"
+  )
+set(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+set(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+set(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

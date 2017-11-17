@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/iec60870-shared.dir/server.cpp.o"
   "CMakeFiles/iec60870-shared.dir/handlers.cpp.o"
+  "CMakeFiles/iec60870-shared.dir/__/json_spirit/json_spirit_reader.cpp.o"
   "libiec60870.pdb"
   "libiec60870.so"
   "libiec60870.so.0.0.1"
