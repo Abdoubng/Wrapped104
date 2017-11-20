@@ -42,12 +42,12 @@ void serverz::Start(){
 
 void serverz::initial(const char* file_name){
        ifstream is(file_name);
-       	Value val;
-       //const string s = file_name;
+       Value val;
        std::cout << "here" << std::endl;
        read(is, val); //read the json file to the value
        Object obj = val.get_obj();
-       std::string ip, port, highlimit, lowlimit;
+       std::string ip;
+       int port, highlimit, lowlimit;
        uint32_t size;
 
     for(Object::size_type i = 0; i != obj.size(); ++i) {   
@@ -64,28 +64,50 @@ void serverz::initial(const char* file_name){
 			const Pair& pair1 = network[l];
 		        const string& name1  = pair1.name_;
 		        const Value&  value1 = pair1.value_;
-		        if( name == "ip" ){
+		        if( name1 == "ip" ){
 				std::cout << "getting ip" << std::endl;
-			       	ip  = value.get_str();
+			       	ip  = value1.get_str();
 				std::cout << ip << std::endl;
 			}
-			else if( name == "port" ) port = value.get_int();
-			else if( name == "highlimit") highlimit = value.get_int();
-			else if( name == "lowlimit") lowlimit = value.get_int();
-	}}
+			
+			else if( name1 == "port" ) port = value1.get_int();
+			else if( name1 == "highlimit"){
+			       	highlimit = value1.get_int();
+				std::cout <<highlimit << std::endl;
+			}
+			else {
+				std::cout << "no highlimit" << std::endl;
+			};
+			if( name1 == "lowlimit") lowlimit = value1.get_int();
+			std::cout << lowlimit << std::endl;
+	}; 
+	}
 	else if ( name == "asduz") {
+		std::cout << "i'm in asduz" << std::endl;
 		asduz = value.get_obj();
 		for(Object::size_type m = 0; m != asduz.size(); ++m) {
 			const Pair& pair2 = asduz[m];
 			const string& name2 = pair2.name_;
 			const Value& value2 = pair2.value_;
-			if(name == "type") {
-				int type = value.get_int();
-				std::cout<<type<<std::cout;
+			if(name2 == "type") {
+				int type = value2.get_int();
+				
+				std::cout<<"here is type"<<type<<std::endl;
 				}
-		}
+			else {
+				std::cout << "no type" << std::endl;
+			}
+		};
 		
     }
+	else {
+		std::cout << "no asduz" << std::endl;
+	};
+
+	const char* ipAddress = ip.c_str();
+	slave=T104Slave_create(nullptr, lowlimit, highlimit);
+	T104Slave_setLocalAddress(slave, ipAddress);
+	std::cout << "Initialized"<<highlimit<< std::endl;;
 
 }
 

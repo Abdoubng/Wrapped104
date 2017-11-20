@@ -83,10 +83,10 @@ bool handlers::getConnectionParameters(Slave slave) {
 /*** Interrogation Handler ***/
 InterrogationHandler handlers::interrogationHandler(void* parameter, MasterConnection connection, ASDU asdu, uint8_t qoi) {
 	std::cout<< "interro for groupe " << std::endl;
-	const char* file_name("config.json");
+//	const char* file_name("config.json");
 
-	std::vector< AsduConf > new_conf = read_config(file_name) ;
-	/*
+//	std::vector< AsduConf > new_conf = read_config(file_name) ;
+	
     ASDU newAsdu = ASDU_create(connectionParameters, M_SP_NA_1, true, INTERROGATED_BY_STATION,
             0, 1, false, false);
     InformationObject io = (InformationObject) SinglePointInformation_create(nullptr, 300, true, IEC60870_QUALITY_GOOD);
@@ -106,7 +106,7 @@ InterrogationHandler handlers::interrogationHandler(void* parameter, MasterConne
     MasterConnection_sendASDU(connection, newAsdu);
 
     MasterConnection_sendACT_TERM(connection, asdu);
-*/
+
     }
 
 /*** Connection Request Handler ***/

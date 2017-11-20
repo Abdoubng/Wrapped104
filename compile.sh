@@ -11,6 +11,6 @@ mkdir build
 cd build
 cmake ..
 make
-sudo make install
-cd build/example
 
+cd build/example
+cp ../../config.json .
